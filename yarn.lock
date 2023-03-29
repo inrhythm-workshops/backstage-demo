@@ -2848,6 +2848,52 @@
     node-fetch "^2.6.7"
     winston "^3.2.1"
 
+"@backstage/plugin-catalog-backend-module-github@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-backend-module-github/-/plugin-catalog-backend-module-github-0.2.6.tgz#0803cef7256a05463e5d635017ebfd2feb9eeb8b"
+  integrity sha512-319z4Tdvnp6PVlNpBKZOzElk7TVe4BEQPodkmoqh0BccdooNs82C7kDEpOqGhocLHmUHPJi4YWmOOdAE0QDi/g==
+  dependencies:
+    "@backstage/backend-common" "^0.18.3"
+    "@backstage/backend-plugin-api" "^0.5.0"
+    "@backstage/backend-tasks" "^0.5.0"
+    "@backstage/catalog-client" "^1.4.0"
+    "@backstage/catalog-model" "^1.2.1"
+    "@backstage/config" "^1.0.7"
+    "@backstage/errors" "^1.1.5"
+    "@backstage/integration" "^1.4.3"
+    "@backstage/plugin-catalog-backend" "^1.8.0"
+    "@backstage/plugin-catalog-common" "^1.0.12"
+    "@backstage/plugin-catalog-node" "^1.3.4"
+    "@backstage/plugin-events-node" "^0.2.4"
+    "@backstage/types" "^1.0.2"
+    "@octokit/graphql" "^5.0.0"
+    "@octokit/rest" "^19.0.3"
+    git-url-parse "^13.0.0"
+    lodash "^4.17.21"
+    minimatch "^5.1.2"
+    node-fetch "^2.6.7"
+    uuid "^8.0.0"
+    winston "^3.2.1"
+
+"@backstage/plugin-catalog-backend-module-gitlab@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-backend-module-gitlab/-/plugin-catalog-backend-module-gitlab-0.1.14.tgz#142028689cf37c6547897e79d211955f43994aad"
+  integrity sha512-RfOgjIPwV1+QfcLfuBzN0m2TydVuigAcos1t0UzbvxQzWYRNUKBZhPqMzI8qOQIwhCzynfOpl5a9HTk2O7w8Bw==
+  dependencies:
+    "@backstage/backend-common" "^0.18.3"
+    "@backstage/backend-plugin-api" "^0.5.0"
+    "@backstage/backend-tasks" "^0.5.0"
+    "@backstage/catalog-model" "^1.2.1"
+    "@backstage/config" "^1.0.7"
+    "@backstage/errors" "^1.1.5"
+    "@backstage/integration" "^1.4.3"
+    "@backstage/plugin-catalog-node" "^1.3.4"
+    "@backstage/types" "^1.0.2"
+    lodash "^4.17.21"
+    node-fetch "^2.6.7"
+    uuid "^8.0.0"
+    winston "^3.2.1"
+
 "@backstage/plugin-catalog-backend@^1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-backend/-/plugin-catalog-backend-1.8.0.tgz#ad4c08a5aa667573d680594cf85744c6fd46bdb9"
@@ -3012,6 +3058,32 @@
     react-helmet "6.1.0"
     react-use "^17.2.4"
     zen-observable "^0.10.0"
+
+"@backstage/plugin-circleci@^0.3.16":
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-circleci/-/plugin-circleci-0.3.16.tgz#e4a68512f441587e1c23edee728854e85ce77bdd"
+  integrity sha512-j3bVXIPTfVF1ET9s+IIB6nxCSkFBNpfAL8Y62BtbSSXfZtLuHF2QXsCdcKYXZxXABFD3OfjxPMLMbRV64aS8UA==
+  dependencies:
+    "@backstage/catalog-model" "^1.2.1"
+    "@backstage/core-components" "^0.12.5"
+    "@backstage/core-plugin-api" "^1.5.0"
+    "@backstage/plugin-catalog-react" "^1.4.0"
+    "@backstage/theme" "^0.2.18"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.57"
+    circleci-api "^4.0.0"
+    humanize-duration "^3.27.0"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+    react-use "^17.2.4"
+
+"@backstage/plugin-events-node@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-events-node/-/plugin-events-node-0.2.4.tgz#3769b925a29346f97499d37c02a3c743d1fcb5d4"
+  integrity sha512-q4rYzdwuHlkY6+6xRsJpwtGE2ttanLoc32+fhQg0wElvMEuzRDqgj4INGeAeAlXYoaa5Ijrvmq58cT8no8A2PQ==
+  dependencies:
+    "@backstage/backend-plugin-api" "^0.5.0"
 
 "@backstage/plugin-github-actions@^0.5.16":
   version "0.5.16"
@@ -7920,6 +7992,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@backstage/plugin-catalog-graph" "^0.2.28"
     "@backstage/plugin-catalog-import" "^0.9.6"
     "@backstage/plugin-catalog-react" "^1.4.0"
+    "@backstage/plugin-circleci" "^0.3.16"
     "@backstage/plugin-github-actions" "^0.5.16"
     "@backstage/plugin-org" "^0.6.6"
     "@backstage/plugin-permission-react" "^0.4.11"
@@ -9045,6 +9118,13 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
+
+circleci-api@^4.0.0:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/circleci-api/-/circleci-api-4.1.4.tgz#6880a28eb021879d81789b50996640dc6373c5ad"
+  integrity sha512-49F0P2mhmfqYzJR/V4+oM+1SfI/VjKPcurvkzuuawNqgW5Eo00ZufgpHgdT+qRrvRymk6yt45bWOIP/f0FKhJA==
+  dependencies:
+    axios "^0.21.1"
 
 cjs-module-lexer@^1.0.0:
   version "1.2.2"
@@ -12746,7 +12826,7 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-humanize-duration@^3.25.1:
+humanize-duration@^3.25.1, humanize-duration@^3.27.0:
   version "3.28.0"
   resolved "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.28.0.tgz#f79770c0bec34d3bfd4899338cc40643bc04df72"
   integrity sha512-jMAxraOOmHuPbffLVDKkEKi/NeG8dMqP8lGRd6Tbf7JgAeG33jjgPWDbXXU7ypCI0o+oNKJFgbSB9FKVdWNI2A==

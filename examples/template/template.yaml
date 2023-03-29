@@ -33,6 +33,7 @@ spec:
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
+              - gitlab.com
               - github.com
 
   # These steps are executed in the scaffolder backend, using data that we gathered
@@ -47,7 +48,7 @@ spec:
         values:
           name: ${{ parameters.name }}
 
-    # This step publishes the contents of the working directory to GitHub.
+    # This step publishes the contents of the working directory to gitlab.
     - id: publish
       name: Publish
       action: publish:github
