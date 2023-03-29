@@ -102,3 +102,9 @@ catalog:
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
     #   rules:
     #     - allow: [User, Group]
+  providers:
+    github:
+      # the provider ID can be any camelCase string
+      providerId:
+        organization: 'inrhythm-workshops' # string
+        catalogPath: '/catalog-info.yaml' # string
