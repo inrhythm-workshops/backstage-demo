@@ -35,6 +35,15 @@ spec:
             allowedHosts:
               - gitlab.com
               - github.com
+    
+    - title: Upload to S3
+      required: 
+        - bucket
+      properties:
+        bucket:
+          title: Bucket
+          type: string
+          description: The context will be uploaded into this bucket
 
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
@@ -45,9 +54,18 @@ spec:
       action: fetch:template
       input:
         url: ./cra-boilerplate
+        copyWithoutRender: ['node_modules', 'internals']
         values:
           name: ${{ parameters.name }}
 
+    - id: uploadToS3
+      name: Upload to S3
+      action: roadiehq:aws:s3:cp
+      input:
+        region: us-east-1
+        bucket: ${{ parameters.bucket }}
+        path: build
+        
     # This step publishes the contents of the working directory to gitlab.
     - id: publish
       name: Publish
@@ -56,6 +74,7 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        repoVisibility: public
 
     # The final step is to register our new component in the catalog.
     - id: register
@@ -73,3 +92,5 @@ spec:
       - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps['register'].output.entityRef }}
+      - title: Project Site
+        url: "http://${{ parameters.bucket }}.s3-website-us-east-1.amazonaws.com"
