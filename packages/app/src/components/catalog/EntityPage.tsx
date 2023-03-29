@@ -27,12 +27,8 @@ import {
   isOrphan,
 } from '@backstage/plugin-catalog';
 import {
-  EntityCircleCIContent,
-  isCircleCIAvailable,
-} from '@backstage/plugin-circleci';
-import {
-  EntityGithubActionsContent,
   isGithubActionsAvailable,
+  EntityGithubActionsContent,
 } from '@backstage/plugin-github-actions';
 import {
   EntityUserProfileCard,
@@ -72,8 +68,8 @@ const cicdContent = (
   // This is an example of how you can implement your company's logic in entity page.
   // You can for example enforce that all components of type 'service' should use GitHubActions
   <EntitySwitch>
-    <EntitySwitch.Case if={isCircleCIAvailable}>
-      <EntityCircleCIContent />
+    <EntitySwitch.Case if={isGithubActionsAvailable}>
+      <EntityGithubActionsContent />
     </EntitySwitch.Case>
 
     <EntitySwitch.Case>
@@ -140,13 +136,9 @@ const serviceEntityPage = (
       {overviewContent}
     </EntityLayout.Route>
 
-    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
-      <EntityGithubActionsContent />
-    </EntityLayout.Route>
-
-    {/* <EntityLayout.Route path="/ci-cd" title="CI/CD">
+    <EntityLayout.Route path="/ci-cd" title="CI/CD">
       {cicdContent}
-    </EntityLayout.Route> */}
+    </EntityLayout.Route>
 
     <EntityLayout.Route path="/api" title="API">
       <Grid container spacing={3} alignItems="stretch">

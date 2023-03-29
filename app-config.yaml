@@ -3,7 +3,7 @@ app:
   baseUrl: http://localhost:3000
 
 organization:
-  name: InRhythm Workshops
+  name: My Company
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -35,13 +35,10 @@ backend:
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
 integrations:
-  gitlab:
-    - host: gitlab.com
-      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      token: ${GITLAB_TOKEN}
   github:
     - host: github.com
+      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
+      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
       token: ${GITHUB_TOKEN}
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
@@ -54,6 +51,7 @@ proxy:
   # '/test':
   #   target: 'https://example.com'
   #   changeOrigin: true
+
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
@@ -67,12 +65,7 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  environment: production
-  providers:
-    github:
-      production:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+  providers: {}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -93,11 +86,6 @@ catalog:
       target: ../../examples/template/template.yaml
       rules:
         - allow: [Template]
-    
-    - type: file
-      target: ../../examples/template/cra-template.yaml
-      rules:
-        - allow: [Template]
 
     # Local example organizational data
     - type: file
@@ -114,11 +102,3 @@ catalog:
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
     #   rules:
     #     - allow: [User, Group]
-  providers:
-    gitlab:
-      yourProviderId:
-        host: gitlab.com
-    github:
-      # the provider ID can be any camelCase string
-      providerId:
-        organization: 'inrhythm-workshops' # string
